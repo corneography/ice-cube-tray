@@ -83,6 +83,54 @@
             require-prior-idle-ms = <30>;
             layers = <0>;
         };
+
+        ctrl_bksp {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <19 20>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        LA-ctrl_tab {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <20 21>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <1>;
+        };
+
+        LA-ctrl_shift-tab {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <19 20>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <1>;
+        };
+
+        LA-ctrl_w {
+            bindings = <&kp LC(W)>;
+            key-positions = <19 21>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <1>;
+        };
+
+        LA-ctrl_shift_t {
+            bindings = <&kp LC(LS(T))>;
+            key-positions = <19 22>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <1>;
+        };
+
+        LA-ctrl_t {
+            bindings = <&kp LC(T)>;
+            key-positions = <22 21>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <1>;
+        };
     };
 
     keymap {
@@ -96,10 +144,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp P  &kp C  &kp L         &kp M  &kp V        &kp X                &kp U            &kp O          &kp Y  &kp F  &kp ESC
-&kp LSHFT  &kp N  &kp S  &kp R         &kp T  &kp D        &kp DOT              &kp A            &kp E          &kp I  &kp G  &kp BSPC
-&kp LCTRL  &kp B  &kp G  &kp APOS      &kp W  &kp Z        &kp FSLH             &kp COMMA        &kp Q          &kp J  &kp K  &kp DELETE
-                         &kp LEFT_ALT  &mo 1  &kp SPACE    &mt RIGHT_SHIFT RET  &lt 2 BACKSPACE  &kp RIGHT_GUI
+&kp TAB    &kp P  &kp C  &kp L         &kp M  &kp V                   &kp X          &kp U            &kp O          &kp Y  &kp F  &kp ESC
+&kp LSHFT  &kp N  &kp S  &kp R         &kp T  &kp D                   &kp DOT        &kp A            &kp E          &kp I  &kp H  &kp BSPC
+&kp LCTRL  &kp B  &kp G  &kp APOS      &kp W  &kp Z                   &kp FSLH       &kp COMMA        &kp Q          &kp J  &kp K  &kp DELETE
+                         &kp LEFT_ALT  &mo 1  &mt LEFT_SHIFT SPACE    &mt RCTRL RET  &lt 2 BACKSPACE  &kp RIGHT_GUI
             >;
         };
 
@@ -111,10 +159,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &kp N1  &kp N2  &kp N3  &kp DELETE    &trans  &trans    &kp UP_ARROW  &trans     &trans  &trans
-&trans  &mo 3   &kp N4  &kp N5  &kp N6  &kp BSPC      &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans
-&trans  &kp N0  &kp N7  &kp N8  &kp N9  &kp DOT       &trans  &trans    &trans        &trans     &trans  &trans
-                        &trans  &trans  &trans        &trans  &trans    &trans
+&trans  &kp LG(LS(S))  &kp N1  &kp N2  &kp N3  &kp DELETE    &trans    &kp K_BACK  &kp UP_ARROW  &kp K_FORWARD  &kp K_REFRESH   &trans
+&trans  &kp NUMBER_0   &kp N4  &kp N5  &kp N6  &kp BSPC      &trans    &kp LEFT    &kp DOWN      &kp RIGHT      &trans          &trans
+&trans  &kp ENTER      &kp N7  &kp N8  &kp N9  &kp DOT       &kp HOME  &kp PG_UP   &kp PG_DN     &kp END        &kp C_AC_CLOSE  &trans
+                               &trans  &trans  &trans        &trans    &trans      &trans
             >;
         };
 
@@ -130,15 +178,6 @@
 &trans  &trans        &kp GRAVE     &kp EQUAL     &kp MINUS     &kp F6          &kp F7  &kp LBKT  &kp RBKT  &kp BSLH  &trans   &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &kp APOS  &trans    &trans    &trans   &trans
                                     &trans        &trans        &trans          &trans  &trans    &trans
-            >;
-        };
-
-        L_ARROWS {
-            bindings = <
-&trans  &trans  &trans    &kp UP_ARROW  &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans    &trans        &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                          &trans        &trans     &trans    &trans  &trans  &trans
             >;
         };
     };
